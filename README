@@ -1,9 +1,9 @@
 # Event-Driven Chat Server
 
 ## Project Overview
-This project demonstrates the implementation of an event-driven chat server built in C. The server is designed to handle real-time communication between multiple clients, broadcasting messages from one client to all others while excluding the sender. 
+This project demonstrates the implementation of an event-driven chat server built in C. The server is designed to handle real-time communication between multiple clients, broadcasting messages from one client to all others while excluding the sender.
 
-Key features of the server:
+### Key Features:
 - **Concurrency**: Supports up to 30 simultaneous client connections.
 - **Non-blocking Design**: Utilizes the `select` system call for efficient event-driven architecture.
 - **Text Manipulation**: Automatically converts incoming messages to uppercase before broadcasting.
@@ -27,11 +27,38 @@ The server is implemented in a Linux environment and demonstrates essential conc
 ### Compile
 To compile the project, use the following command:
 ```bash
-gcc -Wall -o chatServer chatServer.c
-Run:
-./chatServer <port_number>
+gcc -o chat_server chat_server.c
 
-Author
-Hananel Sabag
-Software Engineering Student
-Focused on building scalable and efficient software solutions.
+Run
+
+To start the server, use:
+
+./chat_server <port_number>
+
+Replace <port_number> with the desired port (e.g., 12345).
+
+Requirements
+	•	GCC compiler
+	•	Linux environment
+
+Example
+
+Here is an example of the server in action:
+	1.	Start the server:
+
+./chat_server 12345
+
+
+	2.	Connect clients using tools like telnet:
+
+telnet 127.0.0.1 12345
+
+
+	3.	Send messages from one client to see them broadcast to others.
+
+Improvements
+
+Future enhancements may include:
+	•	Adding support for private messaging.
+	•	Implementing client authentication.
+	•	Introducing message encryption for secure communication.
